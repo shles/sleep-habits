@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "3375A418-9EDE-4D5C-8655-78E5D250C5D8"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52B6ECD7-929E-4DB0-A448-BAB5061617D4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SleepHabits/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "29A7971C-AF60-4816-85EF-927B98376E2A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SleepHabits/DataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
+            landmarkName = "processData(samples:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3D42CA6A-EFE6-4B2E-96A3-DD1DF8ACABD3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SleepHabits/DataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "282"
+            endingLineNumber = "282"
+            landmarkName = "formatDate(sample:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3D42CA6A-EFE6-4B2E-96A3-DD1DF8ACABD3 - f55635d83d809480"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SleepHabits.DataSource.formatDate(sample: __C.HKCategorySample) -&gt; Swift.Optional&lt;Foundation.Date&gt;"
+                  moduleName = "SleepHabits"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shlesberg/Programming/SleepHabits/SleepHabits/DataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "1332">
+               </Location>
+               <Location
+                  uuid = "3D42CA6A-EFE6-4B2E-96A3-DD1DF8ACABD3 - f55635d83d809480"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SleepHabits.DataSource.formatDate(sample: __C.HKCategorySample) -&gt; Swift.Optional&lt;Foundation.Date&gt;"
+                  moduleName = "SleepHabits"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shlesberg/Programming/SleepHabits/SleepHabits/DataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "1936">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E2BEC866-7E32-404C-AB63-28C31537CF81"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SleepHabits/DataSource+consistency.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "standartDeviation"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "E2BEC866-7E32-404C-AB63-28C31537CF81 - 9067155faf6d6847"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SleepHabits.AverageBuffer.standartDeviation.getter : Swift.Optional&lt;Swift.Double&gt;"
+                  moduleName = "SleepHabits"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shlesberg/Programming/SleepHabits/SleepHabits/DataSource+consistency.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "E2BEC866-7E32-404C-AB63-28C31537CF81 - c8ee7b7509b0f80a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Double, Swift.Double) -&gt; Swift.Double in SleepHabits.AverageBuffer.standartDeviation.getter : Swift.Optional&lt;Swift.Double&gt;"
+                  moduleName = "SleepHabits"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shlesberg/Programming/SleepHabits/SleepHabits/DataSource+consistency.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A66A2D31-5CB3-4CC3-9E3E-E689DE440873"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SleepHabits/DataSource+consistency.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "update(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "956CEEEE-D921-4EF9-8BD8-CF937F72188B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SleepHabits/DataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
+            landmarkName = "formatDate(sample:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
