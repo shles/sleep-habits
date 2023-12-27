@@ -20,35 +20,66 @@ struct ContentView: View {
     var body: some View {
         VStack {
             if dataSource.allNights.count > 0 {
-                Chart(dataSource.allNights[0].phases) {
-                    //                PointMark(x: .value("Time went to bed", $0.timeStarted), y: .value("Time in deep sleep", $0.deepSleep))
-                    //            }
-                    BarMark(
-                        xStart: .value("Start Time", $0.startDate),
-                        xEnd: .value("End Time", $0.endDate),
-                        y: .value("Job", $0.value)
-                    ).opacity(0.2)
-                    // Averages on going to bed time
-                    //            Chart(dataSource.deepAveragesSleepRecords) {
-                    //                BarMark(
-                    //                    x: .value("Time went to bed", $0.date),//"\($0.date.formatted(date: .omitted, time: .shortened))"),
-                    //                    y: .value("Time in deep sleep", $0.value)
-                    //                ).foregroundStyle(by: .value("Stage", $0.type.rawValue))
-                    //            }
-                    // Consistency
-                    //            Chart(dataSource.consistencies) {
-                    //                            PointMark(
-                    //                                x: .value("Time went to bed", $0.standardDeviation),//"\($0.date.formatted(date: .omitted, time: .shortened))"),
-                    //                                y: .value("Time in deep sleep", $0.deepSleepPercantage)
-                    //                            )
+                ScrollView {
+                    LineChart(graphs: [
+                        GraphData(
+                            id: 0,
+                            dataPoints: LineChart.strided( data: dataSource.consistencies
+                                .sorted(by: {
+                                    $0.standardDeviation < $1.standardDeviation
+                                })
+                                .map { consisencyPoint in
+                                    DataPoint(
+                                        x: consisencyPoint.standardDeviation,
+                                        y: consisencyPoint.deepSleepPercantage
+                                    )
+                                }
+                            ),
+                            title: "Consystency",
+                            legend: "How time to bed affects you sleep",
+                            form: .insight),
+                        
+                        GraphData(
+                            id: 1,
+                            dataPoints: dataSource.consistencies
+                                .sorted(by: {
+                                    $0.id < $1.id
+                                })
+                                .map {
+                                    $0.standardDeviation
+                                }
+                            ,
+                            title: "Consystency",
+                            legend: "How time to bed affects you sleep",
+                            form: .hystory),
+                        
+                    ])
+//                    LineChart(dataPoints: dataSource.consistencies.map({ consisencyPoint in
+//                        //                    consisencyPoints.map {
+//                        DataPoint(
+//                            x: consisencyPoint.standardDeviation,
+//                            y: consisencyPoint.deepSleepPercantage)
+//                        //                    }
+//                    }))
+//                    LineChart(dataPoints: dataSource.consistencies.map({ consisencyPoint in
+//                        //                    consisencyPoints.map {
+//                        DataPoint(
+//                            x: consisencyPoint.standardDeviation,
+//                            y: consisencyPoint.deepSleepPercantage)
+//                        //                    }
+//                    }))
                     
-                    
-                    //To bed
-                    //                PointMark(
-                    //                    x: .value("Time went to bed", $0.id),//"\($0.date.formatted(date: .omitted, time: .shortened))"),
-                    //                    y: .value("Time in deep sleep", $0.timeToBed)
-                    //                )
+                    Chart(dataSource.allNights[0].phases) {
+                        BarMark(
+                            xStart: .value("Start Time", $0.startDate),
+                            xEnd: .value("End Time", $0.endDate),
+                            y: .value("Job", $0.value)
+                        ).opacity(0.2)
+                    }
+                    .frame(height: 250)
                 }
+                
+
             }
             Image(systemName: "globe")
                 .imageScale(.large)

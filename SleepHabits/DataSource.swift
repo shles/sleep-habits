@@ -8,6 +8,11 @@
 import Foundation
 import HealthKit
 
+extension HKCategorySample {
+    var enumValue : HKCategoryValueSleepAnalysis? {
+        return HKCategoryValueSleepAnalysis(rawValue: self.value)
+    }
+}
 
 struct SleepPercentageRecord: Identifiable {
     var id: Int
@@ -139,14 +144,26 @@ class DataSource: ObservableObject {
                 self?.requestSamples { [weak self] samples in
                     guard let self = self else { return }
                     let nights = self.packNights(samples: samples)
-                    self.allNights = nights
+                    DispatchQueue.main.async {
+                        self.allNights = nights
+                        
+                    }
                     self.processConsistency(nights: nights)
 //                    if let data = self?.processData(samples: samples) {
 //                        DispatchQueue.main.async {
 ////                            self?.deepRecords = data.0
 //                            self?.deepAveragesSleepRecords = self!.averages(records: data.0, withType: .asleepDeep) + self!.averages(records: data.1, withType: .asleepREM) + self!.averages(records: data.2, withType: .asleepCore)
 //                        }
-//                    }
+//                    }a
+                    Task {
+                            do {
+                                let report = try await self.getSleepReport()
+                                print(report)
+                                
+                            } catch {
+                                print("Error: \(error)")
+                            }
+                    }
                 }
             }
         }
@@ -295,7 +312,10 @@ class DataSource: ObservableObject {
     }
     
     private func requestAuth(completion: @escaping (Bool) -> () ) {
-        let allTypes = Set([HKCategoryType(.sleepAnalysis)])
+        let heartRateType = HKQuantityType.quantityType(forIdentifier: .heartRate)!
+        let breathingRateType = HKQuantityType.quantityType(forIdentifier: .respiratoryRate)!
+
+        let allTypes = Set([HKCategoryType(.sleepAnalysis), heartRateType, breathingRateType])
         healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
             if !success {
                 NSLog("Not allowed: \(error.debugDescription)")

@@ -100,6 +100,7 @@ extension DataSource {
         
         DispatchQueue.main.async {
             self.consistencies = result
+            self.objectWillChange.send()
         }
     }
 }
